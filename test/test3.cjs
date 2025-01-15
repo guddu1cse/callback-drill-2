@@ -10,4 +10,4 @@ setTimeout(()=>{
         console.log(data);
     });
 
-} , 2000);
+} ,  2000);

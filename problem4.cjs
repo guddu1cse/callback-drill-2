@@ -9,13 +9,12 @@ function problem4(){
         getList(boardID , (err , data)=>{
             if(err) return console.error(err);
             console.log(data);
-
-            data = data.map((val)=> val.id);
-            data.forEach((id)=>{
-                getCards(id , (err , data)=>{
-                    if(err) return console.error(err);
-                    data.forEach((card)=> console.log(card));
-                });
+            
+            //getting card for mind list
+            const listID = data.find((val)=> val.name == "Mind").id;
+            getCards(listID , (err , data)=>{
+                if(err) return console.error(err);
+                console.log(data);
             });
         });
     })
